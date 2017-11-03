@@ -2,19 +2,26 @@
 
 import sqlite3
 
-def insertAccount(ID, firstName, lastName, username, password, email, phoneNumber):
+def insertAccount(first, last, user, userPassword, userEmail, userPhoneNumber):
 	dbase = sqlite3.connect('Accounts.db')
 	act = dbase.cursor()
-	act.execute("INSERT INTO Accounts VALUES (userID, first, lastName, user, userPassword, userEmail, userPhoneNumber)")
+	row = (first, last, user, userPassword, userEmail, userPhoneNumber)
+	act.execute("INSERT INTO Accounts (FIRSTNAME, LASTNAME, USERNAME, PASSWORD, EMAIL, PHONENUMBER) VALUES (?, ?, ?, ?, ?, ?)", row)
 	dbase.commit()
 	dbase.close()
 
+#insertAccount('Brian', 'Wang', 'brianwang', 'cs196', 'brian@gmail.com', 'asdf')
+
+
 def retrieveUser(user):
  	dbase = sqlite3.connect('Accounts.db')
-	act = dbase.cursor()
-	act.execute("SELECT ID, FIRSTNAME, LAST, USERNAME, PASSWORD, EMAIL, PHONENUMBER FROM AccountInfo WHERE USERNAME = user")
-	dbase.commit()
-	dbase.close()
+ 	act = dbase.cursor()
+ 	str = user
+ 	act.execute("SELECT ID, FIRSTNAME, LASTNAME, USERNAME, PASSWORD, EMAIL, PHONENUMBER FROM Accounts WHERE USERNAME is (?, ? ,?,?,?,?,?,?,?)", user)
+ 	dbase.commit()
+ 	dbase.close()
+
+print(retrieveUser('brianwang'))
 
 def retrieveUser(userPhoneNumber):
 	dbase = sqlite3.connect('Accounts.db')
