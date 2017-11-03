@@ -6,7 +6,11 @@
 
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+<<<<<<< HEAD
   background: url('../img/blue.jpg') no-repeat center center fixed;
+=======
+  background: url('../img/bg.jpg') no-repeat center center fixed;
+>>>>>>> master
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
