@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Backend Test</title>
+</head>
+<body>
+
+	<h1>Login:</h1>
+	<form action="/login-success" method = "POST">
+		Username:<br>
+		<input type="text" name="username"><br>
+		Password:<br>
+		<input type="password" name="password"><br>
+		<input type="submit" name="submit"><br>
+	</form>
+
+	<h1>Signup</h1>
+	<form action="/signup-success" method = "POST">
+		Username:<br>
+		<input type="text" name="username"><br>
+		Password:<br>
+		<input type="password" name="password"><br>
+		Confirm Password:<br>
+		<input type="password" name="confirm-password"><br>
+		<input type="submit" name="submit"><br>
+	</form>
+
+	<h1>Delete User:</h1>
+	<form action="/deleteuser">
+		Username:<br>
+		<input type="text" name="username"><br>
+		Passoword:<br>
+		<input type="password" name="password"><br>
+		<input type="submit">
+	</form>
+
+</body>
+</html>
