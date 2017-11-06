@@ -1,3 +1,5 @@
+#checks to see if the username and password match in datatable
+#works, but still needs to be checked for exceptions
 def logIn(user, userPassword):
 	dbase = sqlite3.connect('Accounts.db')
 	act = dbase.cursor()
