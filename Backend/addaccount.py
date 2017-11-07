@@ -17,13 +17,21 @@ def addAccount(first, last, user, password, userEmail, phone):
     #act.execute('SELECT * from Accounts WHERE USERNAME=username AND PASSWORD=password')
 
     row = (100, first, last, user, password, userEmail, phone)
-    if (not act.execute("SELECT * FROM Accounts WHERE USERNAME=?",(format(user),)).fetchone()[0] or not act.execute("SELECT * FROM Accounts WHERE EMAIL=?",(format(userEmail),)).fetchone()[0]):
-        act.execute("INSERT INTO Accounts (ID, FIRSTNAME, LASTNAME, USERNAME, PASSWORD, EMAIL, PHONENUMBER) VALUES (?,?,?,?,?,?,?)", row)
-        dbase.commit()
-        dbase.close()
-        print ("account made");
-        return True
-    else:
-    	print ("account exists");
+    act.execute("SELECT * FROM Accounts WHERE USERNAME=?",(format(user),))
+    userExist = act.fetchone()
+
+    act.execute("SELECT * FROM Accounts WHERE EMAIL=?",(format(userEmail),))
+    emailExist = act.fetchone()
+    if (userExist is not None): #act.execute("SELECT * FROM Accounts WHERE USERNAME=?",(format(user),)).fetchone()[0]
+    	print ("username taken!");
     	return False
-    
+    elif (emailExist is not None): #not act.execute("SELECT * FROM Accounts WHERE EMAIL=?",(format(userEmail),)).fetchone()[0]
+    	print ("email taken!");
+    	return False
+    else:
+    	act.execute("INSERT INTO Accounts (ID, FIRSTNAME, LASTNAME, USERNAME, PASSWORD, EMAIL, PHONENUMBER) VALUES (?,?,?,?,?,?,?)", row)
+    	dbase.commit()
+    	dbase.close()
+    	print("account made!");
+    	return True
+
