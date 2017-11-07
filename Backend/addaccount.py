@@ -11,15 +11,27 @@ import hashlib
 #hex_dig = hash_object.hexdigest()
 '''
 
-def addaccount(first, last, username, password, email, phone):
-    dbase = sqlite3.connect("Accounts (2).db")
+def addAccount(first, last, user, password, userEmail, phone):
+    dbase = sqlite3.connect("Accounts.db")
     act = dbase.cursor()
-    act.execute('SELECT * from AccountInfo WHERE USERNAME=username AND PASSWORD=password')
-    if act.fetchall():
-        act.execute("INSERT INTO Accountinfo (ID, FIRSTNAME, LAST, USERNAME, PASSWORD, EMAIL, PHONENUMBER) VALUES (?,?,?,?,?,?,?)", (100, first, last, username, password, email, phone))
-        dbase.commit()
-        dbase.close()
-        return "Account Created"
+    #act.execute('SELECT * from Accounts WHERE USERNAME=username AND PASSWORD=password')
+
+    row = (100, first, last, user, password, userEmail, phone)
+    act.execute("SELECT * FROM Accounts WHERE USERNAME=?",(format(user),))
+    userExist = act.fetchone()
+
+    act.execute("SELECT * FROM Accounts WHERE EMAIL=?",(format(userEmail),))
+    emailExist = act.fetchone()
+    if (userExist is not None): #act.execute("SELECT * FROM Accounts WHERE USERNAME=?",(format(user),)).fetchone()[0]
+    	print ("username taken!");
+    	return False
+    elif (emailExist is not None): #not act.execute("SELECT * FROM Accounts WHERE EMAIL=?",(format(userEmail),)).fetchone()[0]
+    	print ("email taken!");
+    	return False
     else:
-        return "Account already exists"
-    
+    	act.execute("INSERT INTO Accounts (ID, FIRSTNAME, LASTNAME, USERNAME, PASSWORD, EMAIL, PHONENUMBER) VALUES (?,?,?,?,?,?,?)", row)
+    	dbase.commit()
+    	dbase.close()
+    	print("account made!");
+    	return True
+
