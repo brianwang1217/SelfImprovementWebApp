@@ -1,7 +1,5 @@
 import sqlite3
 
-#Bunch of Database functions for reference, not all of them work lol
-
 def insertAccount(ID, FIRSTNAME, LAST, USERNAME, PASSWORD, EMAIL, PHONENUMBER):
 	dbase = sqlite3.connect("Accounts (2).db")
 	act = dbase.cursor()
