@@ -12,39 +12,50 @@ def insertAccount(ID, FIRSTNAME, LAST, USERNAME, PASSWORD, EMAIL, PHONENUMBER):
 
 insertAccount(9, "Shreyas", "Mohan", "shreyas", "cs196", "shreyas@gmail", "3453420")
 
-'''
 def retrieveUser(user):
- 	dbase = sqlite3.connect('Accounts.db')
-	act = dbase.cursor()
-	act.execute("SELECT ID, FIRSTNAME, LAST, USERNAME, PASSWORD, EMAIL, PHONENUMBER FROM AccountInfo WHERE USERNAME = user")
-	dbase.commit()
-	dbase.close()
+ 	dbase = sqlite3.connect('Accounts.db') 
+ 	act = dbase.cursor()
+ 	str = (user)
+ 	row = act.execute("SELECT ID, FIRSTNAME, LASTNAME, USERNAME, PASSWORD, EMAIL, PHONENUMBER FROM Accounts WHERE USERNAME = ?", (format(user),))
+ 	return row
+ 	dbase.commit()
+ 	dbase.close()
+
 
 def retrieveUser(userPhoneNumber):
 	dbase = sqlite3.connect('Accounts.db')
 	act = dbase.cursor()
-	act.execute("SELECT ID, FIRSTNAME, LAST, USERNAME, PASSWORD, EMAIL, PHONENUMBER FROM AccountInfo WHERE PHONENUMBER = userPhoneNumber")
+	row = act.execute("SELECT ID, FIRSTNAME, LASTNAME, USERNAME, PASSWORD, EMAIL, PHONENUMBER FROM Accounts WHERE PHONENUMBER = ?", (format(userPhoneNumber),))
+	#print
+	'''
+	for info in row:
+		for i in range(0, len(info)):
+			print(info[i])
+	'''
+	return row
 	dbase.commit()
 	dbase.close()
+	
+#print(retrieveUser('911'))
 
 def updatePhone(user, userPhoneNumber):
 	dbase = sqlite3.connect('Accounts.db')
 	act = dbase.cursor()
-	act.execute("UPDATE AccountInfo SET PHONENUMBER = userPhoneNumber WHERE USERNAME = user")
+	info = (userPhoneNumber, user)
+	act.execute("UPDATE Accounts SET PHONENUMBER = ? WHERE USERNAME = ?", info)
 	dbase.commit()
 	dbase.close()
 
 def updateName(user, userFirst, userLast):
 	dbase = sqlite3.connect('Accounts.db')
 	act = dbase.cursor()
-	act.execute("UPDATE AccountInfo SET FIRSTNAME = userFirst, LAST = userLast WHERE USERNAME = user")
+	act.execute("UPDATE Accounts SET FIRSTNAME = userFirst, LASTNAME = userLast WHERE USERNAME = ?", (format(user),))
 	dbase.commit()
 	dbase.close()
 
 def updateEmail(user, userEmail):
 	dbase = sqlite3.connect('Accounts.db')
 	act = dbase.cursor()
-	act.execute("UPDATE AccountInfo SET EMAIL = userEmail WHERE USERNAME = user")
+	act.execute("UPDATE Accounts SET EMAIL = userEmail WHERE USERNAME = ?", (format(user),))
 	dbase.commit()
 	dbase.close()
-'''
