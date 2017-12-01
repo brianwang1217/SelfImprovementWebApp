@@ -9,7 +9,6 @@
     <meta name="author" content="">
 
     <title>SendMeJunk</title>
-
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -40,14 +39,14 @@
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item active px-lg-4">
+            <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="about.html">About</a>
             </li>
             <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="contact.html">Contact</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="login.html">Log In/Sign Up</a>
+              <a class="nav-link text-uppercase text-expanded" href="signup.html">Sign Up</a>
             </li>
           </ul>
         </div>
@@ -56,62 +55,49 @@
 
     <div class="container">
 
-      <div class="bg-faded p-4 my-4">
-        <hr class="divider">
-        <h2 class="text-center text-lg text-uppercase my-0">About
-          <strong>The SendMeJunk Team</strong>
-        </h2>
-        <hr class="divider">
-        <div class="row">
-          <div class="col-lg-6">
-            <img class="img-fluid mb-4 mb-lg-0" src="img/slide-1.jpg" alt="">
-          </div>
-          <div class="col-lg-6">
-            <p>SendMeJunk is a group project created by students at the University of Illinois at Urbana-Champaign. The project was created as a requirement for CS196, "the best freshman honors supplement course on the planet!"</p>
-            <p>The goal of this project was to create a website that would allow for essential, as well inessential, messages to be sent to the user based on preferences the user filled out. Tell us how we did! </p>
-          </div>
-        </div>
-      </div>
+      <!-- <div class="bg-faded p-4 my-4"> -->
+        <form class="form-login" name='login' action = "POST">
 
-      <div class="bg-faded p-4 my-4">
-        <hr class="divider">
-        <h2 class="text-center text-lg text-uppercase my-0">Our
-          <strong>Team</strong>
-        </h2>
-        <hr class="divider">
-        <div class="row">
-          <div class="col-md-4 mb-4 mb-md-0">
-            <div class="card h-100">
-              <img class="card-img-top" src="http://placehold.it/750x450" alt="">
-              <div class="card-body text-center">
-                <h4 class="card-title m-0">John Smith
-                  <small class="text-muted">Job Title</small>
-                </h4>
-              </div>
+            <div class="login">
+                
+                <div class = "the-form p-4 my-4">
+                
+                    <div class = "log-in-title">
+                        <h1> LOG IN </h1>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            <span>Email</span>
+                            <input type="email" name="email" required>
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            <span>Password</span>
+                            <input type="password" name="password" required>
+                        </label>
+                    </div>
+                    
+                    <div class="form-row">
+                        <label class="checkbox">
+                        <input type="checkbox" name = "checkbox"> 
+                        <span>Remember me</span>
+                        </label>
+                    </div>
+                    
+                    <div class="form-row">
+                        <button type="submit">Log in</button>
+                    </div>
+                
+            <a href="forgot password.html" class="forgot-password">Forgot password?</a>
+
+                </div>
+                        <a href="signup.html" class="create-an-account">Do not have an account? Create one</a>
             </div>
-          </div>
-          <div class="col-md-4 mb-4 mb-md-0">
-            <div class="card h-100">
-              <img class="card-img-top" src="http://placehold.it/750x450" alt="">
-              <div class="card-body text-center">
-                <h4 class="card-title m-0">John Smith
-                  <small class="text-muted">Job Title</small>
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card h-100">
-              <img class="card-img-top" src="http://placehold.it/750x450" alt="">
-              <div class="card-body text-center">
-                <h4 class="card-title m-0">John Smith
-                  <small class="text-muted">Job Title</small>
-                </h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        </form>
+      <!-- </div> -->
 
     </div>
     <!-- /.container -->
