@@ -41,9 +41,9 @@ body {
 .page-head-line {
     font-weight: 900;
     padding-bottom: 20px;
-    border-bottom: 2px solid #F0677C;
+    border-bottom: 2px solid #673E16;
     text-transform: uppercase;
-    color: #F0677C;
+    color: #673E16;
     font-size: 20px;
     margin-bottom: 40px;
 }
@@ -78,7 +78,7 @@ background-color:#F0677C;
    HEADER SECTION STYLES
  ============================================================ */
 header {
-    background-color: #F0677C;
+    background-color: #DEAD82;
     color: #fff;
     padding: 10px;
     text-align: right;
@@ -109,7 +109,7 @@ header {
     -moz-border-radius: 50%;
     height: 60px;
     width: 60px;
-    background-color: #F0677C;
+    background-color: #D0A67C;
     color: #fff;
 }
 
@@ -128,7 +128,7 @@ header {
 
     .user-settings-wrapper .nav > li > a:hover,.user-settings-wrapper .nav > li > a:focus {
         text-decoration: none;
-        background-color: #C36464!important;
+        background-color: #AC8361!important;
     }
 
     .user-settings-wrapper img {
@@ -169,24 +169,24 @@ header {
 }
 
 .menu-top-active {
-    background-color: #C36464;
+    background-color: #A67E5C;
 }
 
 .menu-section .nav > li > a:hover,.menu-section .nav > li > a:focus {
-    background-color: #F0677C!important;
+    background-color: #D0A67C!important;
 }
 
 .menu-section .dropdown-menu > li > a:hover,.menu-section .dropdown-menu > li > a:focus {
-    background-color: #F0677C!important;
+    background-color: #D0A67C!important;
 }
 
 .navbar-inverse {
-    background-color: #C36464;
+    background-color: #B88C5E;
     border-color: transparent;
 }
 
 .navbar-toggle {
-    background-color: #F0677C;
+    background-color: #D0A67C;
     border: 1px solid #fff;
 }
 
@@ -200,7 +200,7 @@ footer {
     padding: 10px;
     color: #fff;
     font-size: 12px;
-    background-color: #C36464;
+    background-color: #CFA57B;
 }
 
     footer a, footer a:hover {

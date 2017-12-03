@@ -13,6 +13,33 @@
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLE  -->
     <link href="assets/css/style.css" rel="stylesheet" />
+    <style>
+.black_overlay {
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1001;
+  -moz-opacity: 0.8;
+  opacity: .80;
+  filter: alpha(opacity=80);
+}
+.white_content {
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  padding: 16px;
+  background-color: white;
+  z-index: 1002;
+  overflow: auto;
+}
+    </style>
 
 </head>
 <body>
@@ -20,9 +47,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <strong>Email: </strong>SendMeJunk@email.com
+                    <a href="index.html" style="color: white; font-size: 1.25em;"><strong>Home</strong></a>
                     &nbsp;&nbsp;
-                    <strong>Support: </strong>+1-000-000-0000
+                    <a href="about.html" style="color: white; font-size: 1.25em;"><strong>About</strong></a>
+                    &nbsp;&nbsp;
+                    <a href="contact.html" style="color: white; font-size: 1.25em;"><strong>Contact</strong></a>
                 </div>
 
             </div>
@@ -39,7 +68,7 @@
                 </button>
                 <a class="navbar-brand" href="index.html">
 
-                    <img src="https://www.tableau.com/favicon.ico" />
+                    <img src="img/title.png" width = 197.5 height = 50/>
                 </a>
 
             </div>
@@ -64,10 +93,7 @@
                                     </div>
                                 </div>
                                 <hr />
-                                <h5><strong>Personal Bio : </strong></h5>
-                                Personal Info here.
-                                <hr />
-                                <a href="#" class="btn btn-info btn-sm">Full Profile</a>&nbsp; <a href="login.html" class="btn btn-danger btn-sm">Logout</a>
+                                <a href="login.html" class="btn btn-danger btn-sm">Logout</a>
 
                             </div>
                         </li>
@@ -114,127 +140,84 @@
            
             <div class="row">
                 <div class="col-md-6">
-                      <div class="notice-board">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                           Most Recent Message 
-                                <div class="pull-right" >
-                                    <div class="dropdown">
-  <button class="btn btn-success dropdown-toggle btn-xs" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-    <span class="glyphicon glyphicon-cog"></span>
-    <span class="caret"></span>
-  </button>
-</div>
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                               
-                                <ul >
-                                   
-                                     <li>
-                                            <a href="#">
-                                     <span class="glyphicon glyphicon-align-left text-success" ></span> 
-                                                  some texts
-                                                 <span class="label label-warning" > Just now </span>
-                                            </a>
-                                    </li>
-                                     <li>
-                                          <a href="#">
-                                     <span class="glyphicon glyphicon-info-sign text-danger" ></span>  
-                                          text here
-                                          <span class="label label-info" > 2 min ago</span>
-                                            </a>
-                                    </li>
-                                     <li>
-                                          <a href="#">
-                                     <span class="glyphicon glyphicon-comment  text-warning" ></span>  
-                                          messages created
-                                          <span class="label label-success" >3 days ago</span>
-                                            </a>
-                                    </li>
-                                    <li>
-                                          <a href="#">
-                                     <span class="glyphicon glyphicon-edit  text-danger" ></span>  
-                                          Some messages
-                                          <span class="label label-success" >20 days ago</span>
-                                            </a>
-                                    </li>
-                                   </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="panel-footer">
-                                <a href="#" class="btn btn-default btn-block"> <i class="glyphicon glyphicon-repeat"></i> Just A Small Footer Button</a>
-                            </div>
-                        </div>
-                    </div>
-                     
-                    <hr />
                      <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
                                             <th>Date</th>
                                             <th>Subject</th>
-                                            <th>Tag</th>
                                             <th>Status</th>
-                                            <th>Send On </th>
-                                            <th>View Messages</th>
+                                            <th>Last Send On </th>
+                                            <th>View</th>
+                                            <th>Cancel</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                        
                                         <tr>
                                             <td>10/22/2017 </td>
-                                            <td> 
-                                                <label class="label label-info">Project </label>
+                                            <td>
+                                                <label class="label label-warning">Exercise </label>
                                             </td>
                                             <td>
-                                                <label class="label label-info">Academic </label>
-                                            </td>
-                                            <td>
-                                                <label class="label label-success">Send</label></td>
-                                            <td>10/25/2017</td>
-                                             <td> <a href="#"  class="btn btn-xs btn-danger"  >View</a> </td>
+                                                <label class="label label-info">Repeating</label></td>
+                                            <td>02/12/2017</td>
+                                             <td> <a class="btn btn-xs btn-success" href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">View</a> </td>
+                                             <div id="light" class="white_content">Message content. <br><a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
+                                             </div>
+                                             <div id="fade" class="black_overlay"></div>
+                                            <td> <a href="#"  class="btn btn-xs btn-danger" >Delete</a> </td>
+
+                                            </div>
                                         </tr>
                                         <tr>
                                             <td>11/01/2017 </td>
-                                            <td> 
-                                                <label class="label label-info">Meeting </label>
+                                            <td>
+                                                <label class="label label-warning">Meeting</label>
                                             </td>
                                             <td>
-                                                <label class="label label-danger">Daily Life</label>
-                                            </td>
-                                            <td>
-                                                <label class="label label-warning">Pending</label></td>
-                                            <td>N/A</td>
-                                             <td> <a href="#"  class="btn btn-xs btn-success"  >View</a> </td>
+                                                <label class="label label-info">Repeating</label></td>
+                                            <td>12/01/2017</td>
+                                            <td> <a class="btn btn-xs btn-success" href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">View</a> </td>
+
+                                             <div id="light" class="white_content">Message content. <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
+                                             </div>
+                                             <div id="fade" class="black_overlay"></div>
+                                            <td> <a href="#"  class="btn btn-xs btn-danger" >Delete</a> </td>
+
+                                            </div>
                                         </tr>
                                         <tr>
                                             <td>11/03/2017 </td>
-                                            <td> 
-                                                <label class="label label-info">Exam </label>
+                                            <td>
+                                                <label class="label label-warning">Exam</label>
                                             </td>
                                             <td>
-                                                <label class="label label-warning">Academic </label>
-                                            </td>
-                                            <td>
-                                                <label class="label label-success">Send</label></td>
+                                                <label class="label label-info">Finished</label></td>
                                             <td>11/07/2017</td>
-                                             <td> <a href="#"  class="btn btn-xs btn-primary"  >View</a> </td>
+                                             <td> <a class="btn btn-xs btn-success" href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">View</a> </td>
+                                             <div id="light" class="white_content"> Message content. <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
+                                             </div>
+                                             <div id="fade" class="black_overlay"></div>
+                                            <td> <a class="btn btn-xs btn-danger" >Delete</a> </td>
+
+                                            </div>
                                         </tr>
                                         <tr>
-                                            <td>11/10/2017 </td>
-                                            <td> 
-                                                <label class="label label-info">Exercise </label>
+                                            <td>09/10/2017 </td>
+                                            <td>
+                                                <label class="label label-warning">AcademicProject</label>
                                             </td>
                                             <td>
-                                                <label class="label label-success">Health </label>
-                                            </td>
-                                            <td>
-                                                <label class="label label-info">Canceled</label></td>
-                                            <td>N/A</td>
-                                             <td> <a href="#"  class="btn btn-xs btn-danger"  >View</a> </td>
+                                                <label class="label label-info">Finished</label></td>
+                                            <td>10/25/2017</td>
+                                             <td> <a class="btn btn-xs btn-success" href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">View</a> </td>
+                                             <div id="light" class="white_content">Message content. <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
+                                             </div>
+                                             <div id="fade" class="black_overlay"></div>
+                                            <td> <a class="btn btn-xs btn-danger" >Delete</a> </td>
+
+                                            </div>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -250,16 +233,70 @@
                         
                         <label>Enter Subject : </label>
                         <input type="text" class="form-control" />
-                        <label>Enter Tag :  </label>
-                        <input type="text" class="form-control" />
                         <label>Enter Message : </label>
-                        <textarea rows="9" class="form-control"></textarea>
+                        <textarea rows="4" class="form-control"></textarea>
+                        <br>
+                        <label>Choose Time to Send : </label> &nbsp;&nbsp;
+                        
+                        <span class="combodate" style="display: inline;"><select class="hour " style="width: auto;"><option value=""></option><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option></select>&nbsp;:&nbsp;<select class="minute " style="width: auto;"><option value=""></option><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select></span>
+                       <br>
+                       <label>Choose Starting Date : </label> &nbsp;&nbsp;
+                       <span class="combodate"><select class="day " style="width: auto;"><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>&nbsp;<select class="month " style="width: auto;"><option value=""></option><option value="0">Jan</option><option value="1">Feb</option><option value="2">Mar</option><option value="3">Apr</option><option value="4">May</option><option value="5">Jun</option><option value="6">Jul</option><option value="7">Aug</option><option value="8">Sep</option><option value="9">Oct</option><option value="10">Nov</option><option value="11">Dec</option></select>&nbsp;<select class="year " style="width: auto;"><option value=""></option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option></select></span>
+                       <br>
+                       <label>Choose Ending Date : </label> &nbsp;&nbsp;
+                        <span class="combodate"><select class="day " style="width: auto;"><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>&nbsp;<select class="month " style="width: auto;"><option value=""></option><option value="0">Jan</option><option value="1">Feb</option><option value="2">Mar</option><option value="3">Apr</option><option value="4">May</option><option value="5">Jun</option><option value="6">Jul</option><option value="7">Aug</option><option value="8">Sep</option><option value="9">Oct</option><option value="10">Nov</option><option value="11">Dec</option></select>&nbsp;<select class="year " style="width: auto;"><option value=""></option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option></select></span>
+                       <div class="choose-days">
+                       <label>Choose Day(s) Want to Receive this Message : </label> 
+                    <div>
+                        <label>
+                            <input type="checkbox" name="checkbox">
+                            <span>Monday</span>
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            <input type="checkbox" name="checkbox">
+                            <span>Tuesday</span>
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            <input type="checkbox" name="checkbox">
+                            <span>Wednsday</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="checkbox">
+                            <span>Thursday</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="checkbox">
+                            <span>Friday</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="checkbox">
+                            <span>Saturday</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="checkbox">
+                            <span>Sunday</span>
+                        </label>
+                    </div>
+                </div>
                         <hr />
-                        <a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-envelope"></span> Send Message </a>&nbsp;
-                      <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-tags"></span>  Save To Drafts </a>
+                        <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-envelope"></span> Send It to Me ! </a>&nbsp;
                     </div>
                     <div class="panel-footer text-muted">
-                        <strong>Note : </strong>Please note that we track all messages so don't send any spams.
+                        <strong>Note : </strong>Please note that we track all messages.
                     </div>
                 </div>
                      </div>
