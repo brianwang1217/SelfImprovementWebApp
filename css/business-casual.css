@@ -6,11 +6,7 @@
 
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
-<<<<<<< HEAD
-  background: url('../img/blue.jpg') no-repeat center center fixed;
-=======
-  background: url('../img/bg.jpg') no-repeat center center fixed;
->>>>>>> master
+  background: url('../img/pop1.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -67,4 +63,324 @@ hr.divider {
 
 .map-container iframe.clicked {
   pointer-events: auto;
+}
+.form-login{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+
+    font: bold 14px sans-serif;
+    text-align: center;
+}
+
+.login{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 0%;
+    text-align: center;
+}
+
+.login .the-form{
+    width: 570px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    padding: 60px 80px;
+    margin-bottom: 32px;
+}
+
+.login .form-row{
+    text-align: left;
+    margin-bottom: 23px;
+}
+
+.login .log-in-title{
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.login h1{
+    display: inline-block;
+    box-sizing: border-box;
+    color:  #4c565e;
+    font-size: 24px;
+    padding: 0 30px 15px;
+    border-bottom: 2px solid #6caee0;
+    margin:0;
+}
+
+.login .form-row > label span{
+    display: inline-block;
+    box-sizing: border-box;
+    color:  #5f5f5f;
+    width: 125px;
+    text-align: right;
+    padding-right: 25px;
+}
+
+.login input{
+    color:  #5f5f5f;
+    box-sizing: border-box;
+    width: 230px;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    padding: 12px 18px;
+    border: 1px solid #dbdbdb;
+}
+
+.login input[type=checkbox]{
+    box-shadow: none;
+    width: auto;
+}
+
+.login .checkbox input{
+    margin-left: 125px;
+    margin-right: 10px;
+    width: auto;
+    vertical-align: top;
+}
+
+.login .form-row .checkbox span{
+    font-size: 15px;
+    font-weight: normal;
+    display: inline-block;
+    text-align: left;
+    width: 220px;
+    margin: 0;
+}
+
+.login button{
+    display: block;
+    border-radius: 2px;
+    background-color:  #6caee0;
+    color: #ffffff;
+    font-weight: bold;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    padding: 15px 35px;
+    border: 0;
+    margin: 55px auto 0;
+    cursor: pointer;
+}
+
+.login .forgot-password,
+.login .create-an-account{
+    text-decoration: none;
+    padding: 4px 8px;
+    font-weight: normal;
+}
+
+.login .forgot-password{
+    color:  #4e9eda;
+}
+
+.login .create-an-account{
+    color:  #4e9eda;
+}
+
+.signupform{
+    width: 1000 px;
+    margin: 0 auto;
+    font: bold 14px sans-serif;
+    text-align: center;
+    box-sizing: border-box;
+    max-width: 475px;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.form-itself{
+    position: absolute;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: -27.5%;
+    text-align: center;
+}
+
+
+.form-itself .signup-form{
+    width: 750px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    padding: 80px 80px 100px 100px;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.form-itself .form-row{
+    text-align: left;
+    margin-bottom: 23px;
+    margin: 25px auto 0;
+
+}
+
+.form-itself input[type=radio],
+.form-itself input[type=checkbox]{
+    box-shadow: none;
+    width: auto;
+}
+
+.form-itself .signup-title{
+    text-align: center;
+    margin-bottom: 50px;
+    margin: 0 auto 40px;
+}
+
+.form-itself h1{
+    display: inline-block;
+    box-sizing: border-box;
+    color:  #4c565e;
+    font-size: 24px;
+    padding: 0 0 12px 0;
+    border-bottom: 2px solid #6caee0;
+    margin: 0;
+}
+
+.form-itself .form-row > label span{
+    display: block;
+    box-sizing: border-box;
+    color:  #5f5f5f;
+    width: 475px;
+    padding: 0 0 12px;
+}
+
+.form-itself input{
+    color:  #5f5f5f;
+    box-sizing: border-box;
+    width: 350px;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    padding: 12px 18px;
+    border: 1px solid #dbdbdb;
+}
+
+.form-itself .form-checkbox input{
+    margin-left: 7px;
+    margin-right: 10px;
+    width: auto;
+    vertical-align: top;
+}
+
+.form-itself .form-row .form-checkbox span{
+    font-size: 12px;
+    font-weight: normal;
+    display: inline-block;
+    text-align: left;
+    width: 220px;
+    margin: 0;
+}
+
+.form-itself .form-checkbox span a{
+    text-decoration: none;
+    color:  #6caee0;
+}
+
+.form-itself .form-radio-buttons > div{
+    margin-bottom: 10px;
+}
+
+.form-itself .form-radio-buttons label span{
+    margin-left: 8px;
+    color:  #5f5f5f;
+    font-weight: normal;
+}
+
+.form-itself .form-radio-buttons input{
+    width: auto;
+}
+
+.form-itself button{
+    display: block;
+    border-radius: 2px;
+    background-color:  #6caee0;
+    color: #ffffff;
+    font-weight: bold;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    padding: 14px 22px;
+    border: 0;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.form-itself .to-login{
+    text-decoration: none;
+    padding: 2px 8px;
+    font-weight: normal;
+    color: #0099ff;
+}
+
+.reset-form{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+
+    font: bold 14px sans-serif;
+    text-align: center;
+}
+
+.reset{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 0%;
+    text-align: center;
+}
+
+.reset .forgot-pw{
+    width: 570px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    padding: 60px 80px;
+    margin-bottom: 32px;
+}
+
+.reset .row{
+    text-align: left;
+    margin-bottom: 23px;
+}
+
+.reset .forgot-title{
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.reset h1{
+    display: inline-block;
+    box-sizing: border-box;
+    color:  #4c565e;
+    font-size: 24px;
+    padding: 0 30px 15px;
+    border-bottom: 2px solid #6caee0;
+    margin:0;
+}
+
+.reset .row > label span{
+    display: inline-block;
+    box-sizing: border-box;
+    color:  #5f5f5f;
+    width: 155px;
+    text-align: right;
+    padding-right: 25px;
+}
+
+.reset input{
+    color:  #5f5f5f;
+    box-sizing: border-box;
+    width: 330px;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    padding: 12px 18px;
+    border: 1px solid #dbdbdb;
+}
+
+.reset button{
+    display: block;
+    border-radius: 2px;
+    background-color:  #6caee0;
+    color: #ffffff;
+    font-weight: bold;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    padding: 15px 35px;
+    border: 0;
+    margin: 55px auto 0;
+    cursor: pointer;
 }
