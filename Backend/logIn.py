@@ -1,6 +1,11 @@
+from flask import Flask, request, render_template
+from flask_mail import Mail, Message
+from twilio.rest import Client
+import sqlite3
+
 #checks to see if the username and password match in datatable
 #works, but still needs to be checked for exceptions
-def logIn(user, userPassword):
+def checkUser(user, userPassword):
 	dbase = sqlite3.connect('Accounts.db')
 	act = dbase.cursor()
 	info = (user, userPassword)
