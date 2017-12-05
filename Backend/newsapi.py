@@ -1,16 +1,7 @@
-from bs4 import BeautifulSoup
-import urllib3
 import requests
+import json
 
-http = urllib3.PoolManager()
-def htmlgetter(url):
-    response = http.request('GET', url)
-    soup = BeautifulSoup(response.data, "html5lib")
-    return soup
-
-soup = htmlgetter('http://www.cnn.com/')
-# headline = soup.find('h2', attrs={'class': "banner-text banner-text--natural"})
-# headline = headline.text.strip()
-soup.div.a
-
-print(soup)
+def getnews():
+    r = requests.get("https://newsapi.org/v2/top-headlines?sources=google-news&apiKey=c7c26ec359ee4b808583307c59852ec6")
+    data = json.loads(r.text)
+    return(data['articles'][0]['title'])

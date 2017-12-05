@@ -5,6 +5,8 @@ import sqlite3
 import requests
 from logIn import checkUser
 from addaccount import addAccount
+from newsapi import getnews
+
 
 app = Flask(__name__)
 
@@ -53,7 +55,7 @@ def checklogin():
     # This is if you are giving backend the information through the forms
 	username = request.form("email")
 	password = request.form("password")
-	The below is if you are POSTing the backend with a Json
+	# The below is if you are POSTing the backend with a Json
 	json_dict = json.loads(request.data)
 	username = json_dict['username']
 	password = jsondict['password']
@@ -64,9 +66,17 @@ def checklogin():
 @app.route("/dashboard.html")
 def dashboard():
     return render_template()
-@app.route("/signup")
+@app.route("/signup.html", methods=['GET', 'POST'])
 def data():
-	return render_template('signup_page.html')
+	if request.method == 'GET':
+		return render_template('signup.html')
+	elif request.method == 'POST':
+		email = request.form("email")
+		password = request.form("psw")
+		phone = request.form("phone")
+		username = request.form("username")
+		addAccount("First", "Last", username, password, email, phone)
+		return "Account Created"
 
 @app.route("/send/quote")
 def send_quote():
@@ -76,14 +86,27 @@ def send_quote():
 	rows = cur.fetchall()
 	emails = []
 	for row in rows:
-		numbers.append(row[6])
-	for row in rows:
 		emails.append(row[5])
 	r = requests.post("http://api.forismatic.com/api/1.0/", data={"method": "getQuote", "format" : "text", 'key': 111, "lang": 'en'})
 	for email in emails:
 		send_mail(r.text, "Quote of the Day", email)
 	send_msg(r.text)
 	return "done"
+
+@app.route("/send/news")
+def send_news():
+	dbase = sqlite3.connect('Accounts.db')
+	cur = dbase.cursor()
+	cur.execute("SELECT * FROM Accounts")
+	rows = cur.fetchall()
+	emails = []
+	for row in rows:
+		emails.append(row[5])
+	headline = getnews()
+	for email in emails:
+		send_mail(headline,"Daily Headline", email)
+	send_msg(headline)
+	return "Done"
 
 
 if __name__ == "__main__":
