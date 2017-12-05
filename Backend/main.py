@@ -108,6 +108,22 @@ def send_news():
 	send_msg(headline)
 	return "Done"
 
+@app.route("/send/trumpquote")
+def send_trump_quote():
+	dbase = sqlite3.connect('Accounts.db')
+	cur = dbase.cursor()
+	cur.execute("SELECT * FROM Accounts")
+	rows = cur.fetchall()
+	emails = []
+	for row in rows:
+		emails.append(row[5])
+	r = requests.get("https://api.whatdoestrumpthink.com/api/v1/quotes/random")
+	data = json.loads(r.text)
+	quote = data["message"]
+	for email in emails:
+		send_mail(quote, "Quote of the Day", email)
+	send_msg(quote)
+	return "done"
 
 if __name__ == "__main__":
 	app.run()
