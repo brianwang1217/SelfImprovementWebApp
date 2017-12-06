@@ -1,0 +1,3 @@
+{
+    "python.pythonPath": "${workspaceRoot}/newsapi/bin/python"
+}

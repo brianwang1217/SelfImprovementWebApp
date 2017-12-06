@@ -20,12 +20,11 @@ def loginsuccess():
     user = request.form.get("username")
     password = request.form.get("password")
     confirm_password = request.form.get("confirm-password")
-    return user
-    '''
+
     if password == confirm_password:
         addaccount("first", "last", user, password, "email", 999999999)
+        return "Account Created"
     else:
         return "Passwords don't match"
-'''
 if __name__ == "__main__":
     app.run(debug=True)
