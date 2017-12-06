@@ -22,9 +22,21 @@ mail = Mail(app)
 
 app.static_folder = 'static' #This is the folder where all the CSS files should go
 
-@app.route("/")
+@app.route("/index.html")
 def mainpage():
 	return render_template("index.html") #Mainpage html
+
+@app.route('/')
+def mainpage2():
+    return render_template("index.html")
+
+@app.route('/about.html')
+def about():
+    return render_template('about.html')
+
+@app.route('/contact.html')
+def contact():
+    return render_template('contact.html')
 
 @app.route("/sendmail/") # This endpoint will sned a mail with given body, subject, and an array of emails
 def send_mail(body, subject, email):
