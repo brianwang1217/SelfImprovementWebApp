@@ -71,9 +71,14 @@ def checklogin():
 		return redirect("http://127.0.0.1:5000/dashboard.html", code=302)
 	return render_template('login.html')
 
-@app.route("/dashboard.html")
+@app.route("/dashboard.html", methods=['GET', 'POST'])
 def dashboard():
-    return render_template('dashboard.html')
+    if request.method == 'GET':
+    	return render_template('dashboard.html')
+	# elif request.method == 'POST':
+	# 	subject = request.form['subject']
+	# 	message = reqeust.form['message']
+	# 	return subject
 
 @app.route("/signup.html", methods=['GET', 'POST'])
 def data():
@@ -85,8 +90,10 @@ def data():
 		checkpassword = request.form['psw-repeat']
 		phone = request.form['phone']
 		user = request.form["username"]
+		firstname = request.form["firstname"]
+		lastname = request.form["lastname"]
 		if password == checkpassword:
-			addAccount("First", "Last", user, password, email, phone)
+			addAccount(firstname, lastname, user, password, email, phone)
 			return "Account Created"
 		else:
 			return render_template('signup.html')
