@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect
 from flask_mail import Mail, Message
 from twilio.rest import Client
 import sqlite3
@@ -50,33 +50,34 @@ def send_msg(message):
 def login():
 	return render_template('login.html')
 	
-@app.route("/login.html", methods=['GET'])
+@app.route("/login.html", methods=['POST'])
 def checklogin():
     # This is if you are giving backend the information through the forms
-	username = request.form("email")
-	password = request.form("password")
-	# The below is if you are POSTing the backend with a Json
-	json_dict = json.loads(request.data)
-	username = json_dict['username']
-	password = jsondict['password']
+	username = request.form['email']
+	password = request.form['password']
 	if checkUser(username, password):
 		return redirect("http://127.0.0.1:5000/dashboard.html", code=302)
-	return "Login Failed"
+	return render_template('login.html')
 
 @app.route("/dashboard.html")
 def dashboard():
-    return render_template()
+    return render_template('dashboard.html')
+
 @app.route("/signup.html", methods=['GET', 'POST'])
 def data():
 	if request.method == 'GET':
 		return render_template('signup.html')
 	elif request.method == 'POST':
-		email = request.form("email")
-		password = request.form("psw")
-		phone = request.form("phone")
-		username = request.form("username")
-		addAccount("First", "Last", username, password, email, phone)
-		return "Account Created"
+		email = request.form['email']
+		password = request.form['psw']
+		checkpassword = request.form['psw-repeat']
+		phone = request.form['phone']
+		user = request.form["username"]
+		if password == checkpassword:
+			addAccount("First", "Last", user, password, email, phone)
+			return "Account Created"
+		else:
+			return render_template('signup.html')
 
 @app.route("/send/quote")
 def send_quote():
