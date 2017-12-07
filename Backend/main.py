@@ -94,7 +94,7 @@ def data():
 		lastname = request.form["lastname"]
 		if password == checkpassword:
 			addAccount(firstname, lastname, user, password, email, phone)
-			return "Account Created"
+			return render_template('dashboard.html')
 		else:
 			return render_template('signup.html')
 
