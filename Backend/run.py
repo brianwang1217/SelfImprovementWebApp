@@ -31,7 +31,8 @@ def loginsuccess():
 def aboutpage():
     return render_template('about.html')
 
-@app.route("/about.html", methods=['GET', 'POST'])
+@app.route("/contact.html", methods=['GET', 'POST'])
+def contactpage():
     return render_template('contact.html')
 
 if __name__ == "__main__":
