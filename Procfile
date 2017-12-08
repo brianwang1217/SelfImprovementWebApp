@@ -1,1 +1,1 @@
-web: gunicorn Backend/run
+web: gunicorn --pythonpath Backend run.py
