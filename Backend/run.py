@@ -26,7 +26,8 @@ def loginsuccess():
         return "Account Created"
     else:
         return "Passwords don't match"
-@app.route("/about", methods=['GET', 'POST'])
+
+@app.route("/about.html", methods=['GET', 'POST'])
 def aboutpage():
     return render_template('about.html')
 
