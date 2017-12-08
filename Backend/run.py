@@ -11,7 +11,7 @@ app = Flask(__name__)
 def hello():
     return "Self Improvement App"
 
-@app.route("/signup", methods=['GET', 'POST'])
+@app.route("/signup.html", methods=['GET', 'POST'])
 def loginpage():
     return render_template('index.html')
 
