@@ -54,9 +54,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <strong>Email: </strong>SendMeJunk@email.com
+                    <a href="index.html" style="color: white; font-size: 1.25em;"><strong>Home</strong></a>
                     &nbsp;&nbsp;
-                    <strong>Support: </strong>+1-000-000-0000
+                    <a href="about.html" style="color: white; font-size: 1.25em;"><strong>About</strong></a>
+                    &nbsp;&nbsp;
+                    <a href="contact.html" style="color: white; font-size: 1.25em;"><strong>Contact</strong></a>
                 </div>
 
             </div>
@@ -71,7 +73,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="dashboard.html">
+                <a class="navbar-brand" href="index.html">
 
                                         <img src="img/title.png" width = 197.5 height = 50/>
                 </a>
@@ -131,7 +133,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h4 class="page-head-line">Personal Settings</h4>
+                    <h4 class="page-head-line">Personal Settings <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">(edit)</a></h4>
                 </div>
             </div>
 
@@ -140,6 +142,28 @@
                 <div class="panel panel-info" style="margin: 1em;">
                     <div class="panel-heading">
                         <h3 class="panel-title">Username</h3>
+                        <div id="light" class="white_content">
+                        
+                        <label>
+                        <span> <div>New Email: </div></span>
+                        <input type = "email" name = "email" required></input>
+                        <label>
+                        <div>
+                        <label>
+                        <span><div>New Phone Number: </div></span>
+                        <input type = "email" name = "email" required></input>
+                        <label>
+                        </div>
+                        <div>
+                        <label>
+                        <span><div>New Email: </div></span>
+                        <input type = "email" name = "email" required></input>
+                        <label>
+                        </div>
+                        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><button type = "submit">Confirm</button></a>
+
+                      </div>
+                      <div id="fade" class="black_overlay"></div>
                     </div>
                     <div class="panel-body">
                         name name
@@ -149,18 +173,7 @@
 
                 <div class="panel panel-info" style="margin: 1em;">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Email <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">(edit)</a></h3>
-
-                        <div id="light" class="white_content">
-                        <label>
-                        <span>Enter Your Information:</span>
-                        <input type = "email" name = "email" required></input>
-                        <label>
-                        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"><button type = "submit">Confirm</button></a>
-
-                        </div>
-                        <div id="fade" class="black_overlay"></div>
-
+                        <h3 class="panel-title">Email </h3>
                     </div>
                     <div class="panel-body">
                         email@gmail.com
@@ -169,7 +182,7 @@
 
                 <div class="panel panel-info" style="margin: 1em;">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Phone Number <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">(edit)</a></h3>
+                        <h3 class="panel-title">Phone Number </h3>
                     </div>
                     <div class="panel-body">
                         1234567890
@@ -178,7 +191,7 @@
 
                 <div class="panel panel-info" style="margin: 1em;">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Last Password Change <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">(edit)</a></h3>
+                        <h3 class="panel-title">Last Password Change</h3>
                     </div>
                     <div class="panel-body">
                         4 days ago
@@ -187,7 +200,7 @@
 
                 <div class="panel panel-info" style="margin: 1em;">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Mail Categories</h3>
+                        <h3 class="panel-title">Categories</h3>
                     </div>
                         <div class="panel-body">
                             <div class="form-radio-buttons">
@@ -215,6 +228,70 @@
                     </div>
                     </div>
                 </div>
+
+                <div class="panel panel-info" style="margin: 1em;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Notification By</h3>
+                    </div>
+                        <div class="panel-body">
+                            <div class="form-radio-buttons">
+
+                       <div>
+                           <label>
+                               <input type="checkbox" name="checkbox">
+                               <span>Text</span>
+                           </label>
+                       </div>
+
+                       <div>
+                           <label>
+                               <input type="checkbox" name="checkbox">
+                               <span>Email</span>
+                           </label>
+                       </div>
+                    </div>
+                    </div>
+                </div>
+
+                 <div class="panel panel-info" style="margin: 1em;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Reminder</h3>
+                    </div>
+                        <div class="panel-body">
+                            <div class="form-radio-buttons">
+
+                    <div>
+                        <label>
+                            <input type="radio" name="radio">
+                            <span>Every 6 hours</span>
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            <input type="radio" name="radio">
+                            <span>Daily</span>
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            <input type="radio" name="radio">
+                            <span>Weekdays</span>
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            <input type="radio" name="radio">
+                            <span>Weekly</span>
+                        </label>
+                    </div>
+                </div>
+                    </div>
+                    </div>
+                </div>
+
 
                      </div>
                 </div>

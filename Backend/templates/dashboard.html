@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>User Dashboard</title>
+    <!-- BOOTSTRAP CORE STYLE  -->
+  
+
+
+    <link href="{{ url_for('static', filename='assets/css/bootstrap.css') }}" rel="stylesheet">
+    <!-- Custom fonts for this template -->   
+    <link href="{{ url_for('static', filename='assets/css/font-awesome.css') }}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet">
+
+
+    <style>
+.black_overlay {
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1001;
+  -moz-opacity: 0.8;
+  opacity: .80;
+  filter: alpha(opacity=80);
+}
+.white_content {
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  padding: 16px;
+  background-color: white;
+  z-index: 1002;
+  overflow: auto;
+}
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="index.html" style="color: white; font-size: 1.25em;"><strong>Home</strong></a>
+                    &nbsp;&nbsp;
+                    <a href="about.html" style="color: white; font-size: 1.25em;"><strong>About</strong></a>
+                    &nbsp;&nbsp;
+                    <a href="contact.html" style="color: white; font-size: 1.25em;"><strong>Contact</strong></a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <!-- HEADER END-->
+    <div class="navbar navbar-inverse set-radius-zero">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+
+                    <img src="img/title.png" width = 197.5 height = 50/>
+                </a>
+
+            </div>
+
+            <div class="left-div">
+                <div class="user-settings-wrapper">
+                    <ul class="nav">
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                                <span class="glyphicon glyphicon-user" style="font-size: 25px;"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-settings">
+                                <div class="media">
+                                    <a class="media-left" href="#">
+                                        <img src="http://www.17qq.com/img_qqtouxiang/5824081.jpeg" alt="" class="img-rounded" />
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">John Doe</h4>
+                                        <h5>User</h5>
+
+                                    </div>
+                                </div>
+                                <hr />
+                                <a href="login.html" class="btn btn-danger btn-sm">Logout</a>
+
+                            </div>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <section class="menu-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="navbar-collapse collapse ">
+                        <ul id="menu-top" class="nav navbar-nav navbar-right">
+                            <li><a class="menu-top-active" href="dashboard.html">Dashboard</a></li>
+                            <li><a href="blank.html">Settings</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- MENU SECTION END-->
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="page-head-line">Dashboard</h4>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                </div>
+
+            </div>
+            
+           
+            <div class="row">
+                <div class="col-md-6">
+                     <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Subject</th>
+                                            <th>Status</th>
+                                            <th>Last Send On </th>
+                                            <th>View</th>
+                                            <th>Cancel</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                       
+                                        <tr>
+                                            <td>10/22/2017 </td>
+                                            <td>
+                                                <label class="label label-warning">Exercise </label>
+                                            </td>
+                                            <td>
+                                                <label class="label label-info">Repeating</label></td>
+                                            <td>02/12/2017</td>
+                                             <td> <a class="btn btn-xs btn-success" href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">View</a> </td>
+                                             <div id="light" class="white_content">Message content. <br><a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
+                                             </div>
+                                             <div id="fade" class="black_overlay"></div>
+                                            <td> <a href="#"  class="btn btn-xs btn-danger" >Delete</a> </td>
+
+                                            </div>
+                                        </tr>
+                                        <tr>
+                                            <td>11/01/2017 </td>
+                                            <td>
+                                                <label class="label label-warning">Meeting</label>
+                                            </td>
+                                            <td>
+                                                <label class="label label-info">Repeating</label></td>
+                                            <td>12/01/2017</td>
+                                            <td> <a class="btn btn-xs btn-success" href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">View</a> </td>
+
+                                             <div id="light" class="white_content">Message content. <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
+                                             </div>
+                                             <div id="fade" class="black_overlay"></div>
+                                            <td> <a href="#"  class="btn btn-xs btn-danger" >Delete</a> </td>
+
+                                            </div>
+                                        </tr>
+                                        <tr>
+                                            <td>11/03/2017 </td>
+                                            <td>
+                                                <label class="label label-warning">Exam</label>
+                                            </td>
+                                            <td>
+                                                <label class="label label-info">Finished</label></td>
+                                            <td>11/07/2017</td>
+                                             <td> <a class="btn btn-xs btn-success" href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">View</a> </td>
+                                             <div id="light" class="white_content"> Message content. <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
+                                             </div>
+                                             <div id="fade" class="black_overlay"></div>
+                                            <td> <a class="btn btn-xs btn-danger" >Delete</a> </td>
+
+                                            </div>
+                                        </tr>
+                                        <tr>
+                                            <td>09/10/2017 </td>
+                                            <td>
+                                                <label class="label label-warning">AcademicProject</label>
+                                            </td>
+                                            <td>
+                                                <label class="label label-info">Finished</label></td>
+                                            <td>10/25/2017</td>
+                                             <td> <a class="btn btn-xs btn-success" href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">View</a> </td>
+                                             <div id="light" class="white_content">Message content. <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
+                                             </div>
+                                             <div id="fade" class="black_overlay"></div>
+                                            <td> <a class="btn btn-xs btn-danger" >Delete</a> </td>
+
+                                            </div>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                </div>
+                <div class="col-md-6">
+                     <div class="Compose-Message">               
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        Compose New Message 
+                    </div>
+                    <div class="panel-body">
+                        
+                        <label>Enter Subject : </label>
+                        <input type="text" class="form-control" />
+                        <label>Enter Message : </label>
+                        <textarea rows="4" class="form-control"></textarea>
+                        <br>
+                        <label>Choose Time to Send : </label> &nbsp;&nbsp;
+                        
+                        <span class="combodate" style="display: inline;"><select class="hour " style="width: auto;"><option value=""></option><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option></select>&nbsp;:&nbsp;<select class="minute " style="width: auto;"><option value=""></option><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select></span>
+                       <br>
+                       <label>Choose Starting Date : </label> &nbsp;&nbsp;
+                       <span class="combodate"><select class="day " style="width: auto;"><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>&nbsp;<select class="month " style="width: auto;"><option value=""></option><option value="0">Jan</option><option value="1">Feb</option><option value="2">Mar</option><option value="3">Apr</option><option value="4">May</option><option value="5">Jun</option><option value="6">Jul</option><option value="7">Aug</option><option value="8">Sep</option><option value="9">Oct</option><option value="10">Nov</option><option value="11">Dec</option></select>&nbsp;<select class="year " style="width: auto;"><option value=""></option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option></select></span>
+                       <br>
+                       <label>Choose Ending Date : </label> &nbsp;&nbsp;
+                        <span class="combodate"><select class="day " style="width: auto;"><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>&nbsp;<select class="month " style="width: auto;"><option value=""></option><option value="0">Jan</option><option value="1">Feb</option><option value="2">Mar</option><option value="3">Apr</option><option value="4">May</option><option value="5">Jun</option><option value="6">Jul</option><option value="7">Aug</option><option value="8">Sep</option><option value="9">Oct</option><option value="10">Nov</option><option value="11">Dec</option></select>&nbsp;<select class="year " style="width: auto;"><option value=""></option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option></select></span>
+                       <div class="choose-days">
+                       <label>Choose Day(s) Want to Receive this Message : </label> 
+                    <div>
+                        <label>
+                            <input type="checkbox" name="checkbox">
+                            <span>Monday</span>
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            <input type="checkbox" name="checkbox">
+                            <span>Tuesday</span>
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            <input type="checkbox" name="checkbox">
+                            <span>Wednsday</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="checkbox">
+                            <span>Thursday</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="checkbox">
+                            <span>Friday</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="checkbox">
+                            <span>Saturday</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="checkbox">
+                            <span>Sunday</span>
+                        </label>
+                    </div>
+                </div>
+                        <hr />
+                        <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-envelope"></span> Send It to Me ! </a>&nbsp;
+                    </div>
+                    <div class="panel-footer text-muted">
+                        <strong>Note : </strong>Please note that we track all messages.
+                    </div>
+                </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CONTENT-WRAPPER SECTION END-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    &copy; 2017 SendMeJunk | By : <a href="#" target="_blank">CS 196 Group</a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER SECTION END-->
+    <!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+    <!-- CORE JQUERY SCRIPTS -->
+    <script src="assets/js/jquery-1.11.1.js"></script>
+    <!-- BOOTSTRAP SCRIPTS  -->
+    <script src="assets/js/bootstrap.js"></script>
+</body>
+</html>
