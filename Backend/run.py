@@ -74,7 +74,7 @@ def checklogin():
 @app.route("/dashboard.html", methods=['GET', 'POST'])
 def dashboard():	
 	if request.method == 'GET':
-		return render_template('dashboardsimple.html')
+		return render_template('dashboardsimple.html') #Change this file to 'dashboard.html' to show the CSS version
 
 @app.route("/signup.html", methods=['GET', 'POST'])
 def data():
