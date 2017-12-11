@@ -8,16 +8,11 @@
 
     <title>User Dashboard</title>
     <!-- BOOTSTRAP CORE STYLE  -->
-  
-
-
     <link href="{{ url_for('static', filename='assets/css/bootstrap.css') }}" rel="stylesheet">
     <!-- Custom fonts for this template -->   
     <link href="{{ url_for('static', filename='assets/css/font-awesome.css') }}" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet">
-
-
     <style>
 .black_overlay {
   display: none;
@@ -144,6 +139,86 @@
             
            
             <div class="row">
+            <div class="col-md-6">
+                     <div class="Compose-Message">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        Compose New Message 
+                    </div>
+                    <div class="panel-body">
+                    <form class = "compose" action = "POST">
+                        
+                        <label>Enter Subject : </label>
+                        <input type="text" class="form-control" />
+                        <label>Enter Message : </label>
+                        <textarea rows="4" class="form-control"></textarea>
+                        <br />
+                           <label>Choose Time to Send : </label> &nbsp;&nbsp;
+                        
+                        <span class="combodate" style="display: inline;"><select class="hour " style="width: auto;"><option value=""></option><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option></select>&nbsp;:&nbsp;<select class="minute " style="width: auto;"><option value=""></option><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select></span>
+                       <br />
+                        <label>Choose Starting Date : </label> &nbsp;&nbsp;
+                       <span class="combodate"><select class="day " style="width: auto;"><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>&nbsp;<select class="month " style="width: auto;"><option value=""></option><option value="0">Jan</option><option value="1">Feb</option><option value="2">Mar</option><option value="3">Apr</option><option value="4">May</option><option value="5">Jun</option><option value="6">Jul</option><option value="7">Aug</option><option value="8">Sep</option><option value="9">Oct</option><option value="10">Nov</option><option value="11">Dec</option></select>&nbsp;<select class="year " style="width: auto;"><option value=""></option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option></select></span>
+                       <br />
+                         <label>Choose Ending Date : </label> &nbsp;&nbsp;
+                        <span class="combodate"><select class="day " style="width: auto;"><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>&nbsp;<select class="month " style="width: auto;"><option value=""></option><option value="0">Jan</option><option value="1">Feb</option><option value="2">Mar</option><option value="3">Apr</option><option value="4">May</option><option value="5">Jun</option><option value="6">Jul</option><option value="7">Aug</option><option value="8">Sep</option><option value="9">Oct</option><option value="10">Nov</option><option value="11">Dec</option></select>&nbsp;<select class="year " style="width: auto;"><option value=""></option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option></select></span>
+                                        
+                       <div class="choose-days">
+                       <label>Choose Day(s) Want to Receive this Message : </label> 
+                    <div>
+                        <label>
+                            <input type="checkbox" name="checkbox">
+                            <span>Monday</span>
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            <input type="checkbox" name="checkbox">
+                            <span>Tuesday</span>
+                        </label>
+                    </div>
+
+                    <div>
+                        <label>
+                            <input type="checkbox" name="checkbox">
+                            <span>Wednsday</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="checkbox">
+                            <span>Thursday</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="checkbox">
+                            <span>Friday</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="checkbox">
+                            <span>Saturday</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" name="checkbox">
+                            <span>Sunday</span>
+                        </label>
+                    </div>
+                </div>
+                        <hr />
+                        <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-envelope" type = "submit"></span> Send It to Me ! </a>&nbsp;
+                    </div>
+                    <div class="panel-footer text-muted">
+                        <strong>Note : </strong>Please note that we track all messages.
+                    </div>
+                </div>
+                     </div>
+                </div>                           
                 <div class="col-md-6">
                      <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover">
@@ -228,86 +303,55 @@
                                 </table>
                             </div>
                 </div>
-                <div class="col-md-6">
-                     <div class="Compose-Message">               
-                <div class="panel panel-success">
+                <div>
+                <br />
+                </div>
+                            <form action="/send" method="get">
+                                Subject: <input type="text" name="subject"><br>
+                                Message: <input type="text" name="message"><br>
+                                <input type="submit" value="Submit">
+                            </form>
+                        </div>
+                <!-- <form class = "sendmessage" id = "send" name='sendmessage' action="/send/mail" method = 'post'> 
+                    <div class="panel panel-success">
                     <div class="panel-heading">
                         Compose New Message 
                     </div>
                     <div class="panel-body">
-                        
+                    <form class = "compose" action = "/send/mail" method='post'>
                         <label>Enter Subject : </label>
-                        <input type="text" class="form-control" />
+                        <input type="text" name="subject" class="form-control" />
                         <label>Enter Message : </label>
+                        <input type="text" name="message" class="form-control" />
                         <textarea rows="4" class="form-control"></textarea>
-                        <br>
-                        <label>Choose Time to Send : </label> &nbsp;&nbsp;
-                        
-                        <span class="combodate" style="display: inline;"><select class="hour " style="width: auto;"><option value=""></option><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option></select>&nbsp;:&nbsp;<select class="minute " style="width: auto;"><option value=""></option><option value="0">00</option><option value="1">01</option><option value="2">02</option><option value="3">03</option><option value="4">04</option><option value="5">05</option><option value="6">06</option><option value="7">07</option><option value="8">08</option><option value="9">09</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option></select></span>
-                       <br>
-                       <label>Choose Starting Date : </label> &nbsp;&nbsp;
-                       <span class="combodate"><select class="day " style="width: auto;"><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>&nbsp;<select class="month " style="width: auto;"><option value=""></option><option value="0">Jan</option><option value="1">Feb</option><option value="2">Mar</option><option value="3">Apr</option><option value="4">May</option><option value="5">Jun</option><option value="6">Jul</option><option value="7">Aug</option><option value="8">Sep</option><option value="9">Oct</option><option value="10">Nov</option><option value="11">Dec</option></select>&nbsp;<select class="year " style="width: auto;"><option value=""></option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option></select></span>
-                       <br>
-                       <label>Choose Ending Date : </label> &nbsp;&nbsp;
-                        <span class="combodate"><select class="day " style="width: auto;"><option value=""></option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>&nbsp;<select class="month " style="width: auto;"><option value=""></option><option value="0">Jan</option><option value="1">Feb</option><option value="2">Mar</option><option value="3">Apr</option><option value="4">May</option><option value="5">Jun</option><option value="6">Jul</option><option value="7">Aug</option><option value="8">Sep</option><option value="9">Oct</option><option value="10">Nov</option><option value="11">Dec</option></select>&nbsp;<select class="year " style="width: auto;"><option value=""></option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option></select></span>
-                       <div class="choose-days">
-                       <label>Choose Day(s) Want to Receive this Message : </label> 
+                        <br />
+                        <div class="present">
+                       <label>Also Send Me : </label> 
                     <div>
                         <label>
-                            <input type="checkbox" name="checkbox">
-                            <span>Monday</span>
+                            <input type="checkbox" name="quotes">
+                            <span>Quotes<span>
                         </label>
                     </div>
 
                     <div>
                         <label>
-                            <input type="checkbox" name="checkbox">
-                            <span>Tuesday</span>
+                            <input type="checkbox" name="news">
+                            <span>News</span>
                         </label>
                     </div>
-
-                    <div>
-                        <label>
-                            <input type="checkbox" name="checkbox">
-                            <span>Wednsday</span>
-                        </label>
                     </div>
-                    <div>
-                        <label>
-                            <input type="checkbox" name="checkbox">
-                            <span>Thursday</span>
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            <input type="checkbox" name="checkbox">
-                            <span>Friday</span>
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            <input type="checkbox" name="checkbox">
-                            <span>Saturday</span>
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            <input type="checkbox" name="checkbox">
-                            <span>Sunday</span>
-                        </label>
-                    </div>
-                </div>
                         <hr />
-                        <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-envelope"></span> Send It to Me ! </a>&nbsp;
+                        <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-envelope" type = "submit" formmethod='post'></span> Send It Now ! </a>&nbsp;
                     </div>
                     <div class="panel-footer text-muted">
-                        <strong>Note : </strong>Please note that we track all messages.
+                        <strong>Note : </strong>Please note that we track all messages. -->
                     </div>
-                </div>
-                     </div>
-                </div>
+                </div>                     
             </div>
         </div>
+    </div>
+    </div>
     </div>
     <!-- CONTENT-WRAPPER SECTION END-->
     <footer>
