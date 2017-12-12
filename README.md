@@ -31,6 +31,7 @@ After this, you are all set to run and start using our application!
 Simply
 
 ```bash
+$ cd Backend/
 $ python run.py
 ```
 
