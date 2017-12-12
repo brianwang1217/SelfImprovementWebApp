@@ -36,3 +36,8 @@ $ python run.py
 ```
 
 And it will load the website in a localhost.
+
+## Testing Backend
+
+    GET /test/backend
+At this endpoint you can test the email and sms functions with different messages.
