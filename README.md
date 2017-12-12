@@ -1,13 +1,13 @@
 # Send Me Junk: CS 196 Honors Project
 
-## Members:
+## Members
 Shreyas Mohan, David Wang, Brain Wang, Ruiyi Wang, Alex Szymanski.
 Project Managers: Justin Yang and Sahil Bhatt
 
 ## What is Send Me Junk?
 Send Me Junk is a Flask-based website that uses the Twilio APi, Flask Mail along with many other APIs to bring its users the information that matter most to them, while reminding them to keep up with school work and assignments etc.
 
-## Tech Stack:
+## Tech Stack
 HTML and CSS for Front End
 Flask for Backend
 Sqlite for Database
