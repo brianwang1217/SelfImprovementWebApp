@@ -4,6 +4,9 @@
 Shreyas Mohan, David Wang, Brain Wang, Ruiyi Wang, Alex Szymanski.
 Project Managers: Justin Yang and Sahil Bhatt
 
+## What is Send Me Junk?
+Send Me Junk is a Flask-based website that uses the Twilio APi, Flask Mail along with many other APIs to bring its users the information that matter most to them, while reminding them to keep up with school work and assignments etc.
+
 ## Tech Stack:
 HTML and CSS for Front End
 Flask for Backend
@@ -11,7 +14,7 @@ Sqlite for Database
 
 ## Setup
 
-Download a virtual environment and download our requirements.txt file:
+Download virtual environment and download our requirements.txt file:
 
 ```bash
 $ pip3 install virtualenv
@@ -20,7 +23,7 @@ $ source venv/bin/activate
 (venv)$ pip install -r requirements.txt
 ```
 
-Downlaod Sqlite from https://www.sqlite.org/ and DB Browser for Sqlite from http://sqlitebrowser.org/ (a GUI to look at schema and data in the database"
+Download Sqlite from https://www.sqlite.org/ and DB Browser for Sqlite from http://sqlitebrowser.org/ (a GUI to look at schema and data in the database"
 
 ## How to Run
 
