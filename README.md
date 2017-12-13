@@ -1,7 +1,7 @@
 # Send Me Junk: CS 196 Honors Project
 
 ## Members
-Shreyas Mohan, David Wang, Brain Wang, Ruiyi Wang, Alex Szymanski.
+Shreyas Mohan, David Wang, Brain Wang, Ruiyi Wang, Alex Szymanski, Alex Yu.
 Project Managers: Justin Yang and Sahil Bhatt
 
 ## What is Send Me Junk?
